@@ -3,7 +3,7 @@ Modable Discord is an API which allows you to configure a basic discord bot.
 And have custom-made mods for it instead of coding everything into the bot at once
 
 ## How to set up
-Create a directory where you put the "ModableDiscord-version.jar"
+Create a directory where you put the "ModableDiscord-version.jar".
 Once you have done that create a file called launch.sh or launch.bat and write 
 ```shell
 java -jar "ModableDiscord-version.jar"
