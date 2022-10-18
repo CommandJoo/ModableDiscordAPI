@@ -1,0 +1,6 @@
+/.gradle/
+/.idea/
+/build/
+/mods/
+/gradle/
+config.json
