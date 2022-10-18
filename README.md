@@ -10,7 +10,7 @@ java -jar "ModableDiscord-version.jar"
 ```
 in it.
 
-Launch the file an wait until it closes again
+Launch the file an wait until it closes again.
 You will now have to configure your config.json file like this
 ````json
 {
@@ -27,7 +27,7 @@ You will now have to configure your config.json file like this
 ## How to create a Mod
 
 Now you can launch your bot.
-However it doesnt have any functionality what so ever
+However it doesnt have any functionality whatsoever.
 To create a new mod you have to setup a workspace in an ide of your choice and add the .jar file as a dependency.
 After thats done you will make two files one for the Main-Class e.g. de.jo.TestMod and one for the mod info which is called mod.json
 
