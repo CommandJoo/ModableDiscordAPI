@@ -1,6 +1,7 @@
 package de.jo.modablediscord.main;
 
 import de.jo.modablediscord.discord.ModableDiscordConfig;
+import de.jo.modablediscord.discordmod.DiscordMod;
 import de.jo.modablediscord.events.jda.Listener;
 import de.jo.modablediscord.mod.ModLoader;
 import de.jo.modablediscord.mod.impl.Mod;
@@ -29,6 +30,8 @@ public class ModableDiscord {
 
     private ModableDiscordConfig config;
     private List<Mod> mods = new ArrayList<>();
+
+    public static final String VERSION = "v1.0.5";
 
     public ModableDiscord() {
         instance = this;
@@ -73,7 +76,9 @@ public class ModableDiscord {
     public void init() {
         this.registerJDAEvent(new Listener());
 
-        this.mods = new ModLoader().loadDirectory(this.fileManager.getDirectory("mods"));
+        this.mods = new ArrayList<>();
+        this.mods.add(new DiscordMod());
+        this.mods.addAll(new ModLoader().loadDirectory(this.fileManager.getDirectory("mods")));
         for(Mod mod : this.mods) {
             mod.onEnable();
         }

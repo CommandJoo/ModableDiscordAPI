@@ -40,7 +40,6 @@ public class ModLoader {
         mod.setInfo(modInfo);
 
         mod.setManager(new ModManager(ModableDiscord.getInstance()));
-
         return mod;
     }
 

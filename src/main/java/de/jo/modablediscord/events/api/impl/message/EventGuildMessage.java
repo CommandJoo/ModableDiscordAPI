@@ -1,23 +1,25 @@
-package de.jo.modablediscord.events.api.impl;
+package de.jo.modablediscord.events.api.impl.message;
 
-import de.jo.modablediscord.events.api.events.Event;
+import de.jo.modablediscord.events.api.impl.EventMessageBase;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
-import net.dv8tion.jda.api.entities.channel.unions.MessageChannelUnion;
 
-public class EventGuildMessage extends EventMessage {
+public class EventGuildMessage extends EventMessageBase {
 
     private Guild guild;
+    private Member member;
 
     public EventGuildMessage(Guild guild, Member member, Message message, GuildMessageChannel channel) {
-        super(member, message, channel);
+        super(message, channel);
+        this.member = member;
         this.guild = guild;
     }
 
+    public Member member() {
+        return member;
+    }
     public Guild guild() {
         return guild;
     }

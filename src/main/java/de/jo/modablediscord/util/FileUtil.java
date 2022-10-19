@@ -1,5 +1,11 @@
 package de.jo.modablediscord.util;
 
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
+import net.dv8tion.jda.api.utils.FileUpload;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
 
@@ -46,6 +52,26 @@ public class FileUtil {
     }
     public static void write(String file, String s) {
         write(new File(file), s);
+    }
+
+    public static FileUpload fileUpload(ByteArrayOutputStream stream, String fileName) {
+        try {
+            FileUpload fu = FileUpload.fromData(stream.toByteArray(), fileName);
+            stream.flush();
+            stream.close();
+            return fu;
+        } catch(Exception ex) {
+            return null;
+        }
+    }
+    public static FileUpload fileUpload(BufferedImage image, String fileFormat, String name) {
+        try {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            ImageIO.write(image, fileFormat, stream);
+            return fileUpload(stream, name);
+        } catch(Exception ex) {
+            return null;
+        }
     }
 
 }

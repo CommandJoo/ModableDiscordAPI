@@ -1,6 +1,5 @@
 {
-  "botToken": "Your Bot Token",
-  "guildID": "",
+  "botToken": "Token",
   "onlineStatus": "ONLINE",
   "activity": {
     "name": "Minecraft",

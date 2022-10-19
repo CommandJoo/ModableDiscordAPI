@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.Activity;
 
 public class ModableDiscordConfig {
 
-    public String botToken = "Bot Token Here", guildID = "Guild ID to be listened to";
+    public String botToken = "Bot Token Here";
     public OnlineStatus onlineStatus = OnlineStatus.ONLINE;
     public Activity activity = new Activity("Discord", net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING);
 
