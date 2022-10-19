@@ -4,3 +4,6 @@
 /mods/
 /gradle/
 config.json
+gradlew
+gradlew.bat
+/out/
