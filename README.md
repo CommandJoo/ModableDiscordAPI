@@ -30,6 +30,21 @@ However, it doesn't have any functionality whatsoever.
 To create a new mod you have to set up a workspace in an ide of your choice and add the .jar file as a dependency.
 After that's done you will make two files one for the Main-Class e.g. de.jo.TestMod and one for the mod info which is called mod.json
 
+To setup a mod using gradle add ModableDiscord as a dependency to your build.gradle file!
+
+[Latest Release Version](https://github.com/CommandJoo/ModableDiscordAPI/releases/latest)
+```groovy
+repositories {
+    //...other repos
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.CommandJoo:ModableDiscordAPI:CurrentVersion'
+}
+
+```
+
 The Main-Class should look like this
 ```java
 package de.jo.TestMod;
