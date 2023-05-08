@@ -5,21 +5,19 @@ import de.jo.modablediscord.discordmod.DiscordMod;
 import de.jo.modablediscord.events.jda.Listener;
 import de.jo.modablediscord.mod.ModLoader;
 import de.jo.modablediscord.mod.impl.Mod;
-import de.jo.modablediscord.mod.impl.ModManager;
 import de.jo.modablediscord.util.FileManager;
+import de.jo.modablediscord.util.FileUtil;
 import de.jo.modablediscord.util.GsonUtil;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ModableDiscord {
 
@@ -31,7 +29,7 @@ public class ModableDiscord {
     private ModableDiscordConfig config;
     private List<Mod> mods = new ArrayList<>();
 
-    public static final String VERSION = "v1.0.5";
+    public static final String VERSION = "v1.0.6";
 
     public ModableDiscord() {
         instance = this;
@@ -71,6 +69,10 @@ public class ModableDiscord {
             this.shutdown();
             Runtime.getRuntime().exit(-1);
         }
+
+
+        System.out.println(FileUtil.text("ascii.txt"));
+
     }
 
     public void init() {

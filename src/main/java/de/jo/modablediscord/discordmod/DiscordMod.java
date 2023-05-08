@@ -12,7 +12,7 @@ public class DiscordMod extends Mod {
     public DiscordMod() {
         ModInfo discordModInfo = new ModInfo();
         discordModInfo.name = "ModableDiscord";
-        discordModInfo.author = User.fromId(814472040907014145L).getAsMention();
+        discordModInfo.author = User.fromId(1104138142438653963L).getAsMention();
         discordModInfo.version = ModableDiscord.VERSION;
         discordModInfo.description = "The Default Mod for ModableDiscord";
         this.setInfo(discordModInfo);
@@ -22,10 +22,11 @@ public class DiscordMod extends Mod {
     @Override
     public void onEnable() {
         System.out.println("Enabled ModableDiscord default Mod");
-        setCommands(new CommandManager("~") {
+        setCommands(new CommandManager("?") {
             @Override
             public void init() {
                 addCommand(new CommandMods());
+                addCommand(new CommandId());
             }
         });
     }

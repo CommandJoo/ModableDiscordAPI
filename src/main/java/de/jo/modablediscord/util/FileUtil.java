@@ -11,6 +11,9 @@ import java.nio.file.Files;
 
 public class FileUtil {
 
+    public static String text(String resource) {
+        return text(ClassLoader.getSystemResourceAsStream(resource));
+    }
     public static String text(InputStream stream) {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
@@ -19,6 +22,7 @@ public class FileUtil {
             StringBuilder sb = new StringBuilder();
             while((line = reader.readLine()) != null) {
                 sb.append(line);
+                sb.append("\n");
             }
             return sb.toString();
         } catch(Exception ex) {
